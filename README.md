@@ -2,7 +2,8 @@
 一个jquery级联下拉组件
 
 <h5>1.使用方法</h5>
-$(class or id).caseCader({data:yourData});
+
+$("你的下拉框区域").caseCader({data:你的数据});
 
 <h5>2.data数据格式</h5>
             
@@ -74,3 +75,5 @@ $(class or id).caseCader({data:yourData});
             ]
     
             var data = [firstItems, secondItems, thirdItems];
+
+           
