@@ -1,0 +1,168 @@
+.el-casecader {
+    width: 222px;
+    display: inline-block;
+    position: relative;
+    font-size: 14px;
+    line-height: 40px;
+}
+
+.el-input {
+    position: relative;
+    font-size: 14px;
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+}
+
+.el-cascader__label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* height: 100%; */
+    padding: 0 25px 0 15px;
+    color: #606266;
+    /* width: 100%; */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: left;
+    font-size: inherit;
+}
+
+.el-input--suffix .el-input__inner {
+    padding-right: 30px;
+}
+
+.el-input__suffix {
+    position: absolute;
+    height: 100%;
+    right: 5px;
+    top: 0;
+    text-align: center;
+    color: #c0c4cc;
+    transition: all .3s;
+    pointer-events: none;
+}
+
+.el-input__suffix-inner {
+    pointer-events: all;
+}
+
+.el-input__inner {
+    -webkit-appearance: none;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 4px;
+    border: 1px solid #dcdfe6;
+    box-sizing: border-box;
+    color: #606266;
+    display: inline-block;
+    font-size: inherit;
+    height: 40px;
+    line-height: 40px;
+    outline: none;
+    padding: 0 15px;
+    transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+    width: 100%;
+}
+
+.el-cascader .el-input__icon {
+    transition: transform .3s;
+    font-size: 40px;
+}
+
+.el-input-spinner {
+    transform: rotate(180deg);
+}
+
+/* .el-icon-arrow-down:before {
+    content: "\E603";
+} */
+
+.el-cascader-menu {
+    display: inline-block;
+    vertical-align: top;
+    height: 204px;
+    overflow: auto;
+    border-right: 1px solid #e4e7ed;
+    background-color: #fff;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 6px 0;
+    min-width: 160px;
+}
+
+.popper__arrow {
+    top: -6px;
+    left: 50%;
+    margin-right: 3px;
+    border-top-width: 0;
+    border-bottom-color: #ebeef5;
+    border-width: 6px;
+    filter: drop-shadow(0 2px 12px rgba(0, 0, 0, .03));
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+
+.popper__arrow:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: #fff transparent transparent transparent;
+    border-style: solid;
+    content: "\00a0";
+    top: -18px;
+    border-width: 10px;
+    transform: rotate(180deg);
+  
+}
+
+
+
+
+.el-cascader-menus {
+    white-space: nowrap;
+    background: #fff;
+    position: absolute;
+    margin: 5px 0;
+    z-index: 2;
+    border: 1px solid #e4e7ed;
+    border-radius: 2px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+}
+
+.el-popper[x-placement^=bottom] {
+    margin-top: 12px;
+}
+
+
+.el-cascader-menu__item {
+    font-size: 14px;
+    padding: 8px 20px;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #606266;
+    height: 34px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    cursor: pointer;
+    outline: none;
+}
+
+.selected-item {
+    background: #ddd;
+}
+
+.fa-angle-right {
+    position: absolute;
+    right: 5px;
+}
