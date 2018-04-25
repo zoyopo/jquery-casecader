@@ -77,10 +77,8 @@ $("你的下拉框区域").caseCader({data:你的数据});
             var data = [firstItems, secondItems, thirdItems];
 
 <h5>3.依赖项</h5>
+font-awesome.min.css
 
-fontawsome样式
-
-<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 
