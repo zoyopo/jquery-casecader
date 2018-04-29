@@ -104,7 +104,7 @@
                 //var $el_cascader_menus = $('.el-cascader-menus');
                 var $this = _$this; //点击的li
                 //因为事件绑在document上，所以要阻止非li元素
-                if($this[0].tagName!='LI'){
+                if ($this[0].tagName != 'LI') {
 
                     return;
                 }
@@ -372,20 +372,13 @@
         },
 
         init: function (jqObj, options, app) {
-            var that = this;
-            return function () {
+
                 app.methods.addInnerDom.apply(null, arguments);
-                app.methods.addAfterDom.apply(null, arguments);//dom元素添加
-                that.initializeElements();//初始化selector
-
-
+                app.methods.addAfterDom.apply(null, arguments); //dom元素添加
+                this.initializeElements(); //初始化selector
                 $(jqObj).on('click', () => app.methods.addSelectItems.apply(null, arguments));
-                
-
-                //this.bindEvent.apply(null,arguments);
-                //this.loadGrid();
-                that._scanEventsMap.apply(null, arguments);
-            }
+                this._scanEventsMap.apply(null, arguments);
+           
         },
 
         _scanEventsMap: function (jqObj, options, app) {
@@ -449,7 +442,7 @@
             //eventBinding(this, options);$
 
 
-            new caseCaderApp().init(this, options, new caseCaderApp())(this, options, new caseCaderApp());
+            new caseCaderApp().init(this, options, new caseCaderApp());
 
 
         });
