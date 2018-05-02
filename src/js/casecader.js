@@ -73,7 +73,11 @@
     var defaults = {
 
         liEvent: 'mousedown',
-        data: data
+        data: data,
+        dataRelation:{
+            code:'code',//自身code
+            parentCode:'parentCode'//父级code
+        }//定义关联的字段名
 
     };
 
@@ -134,16 +138,16 @@
                 var iTag = "";
                 $.each(options.data[level], function (index, item) {
 
-                    if (item.parentCode == $this.attr('data-code')) {
+                    if (item[options.dataRelation.parentCode] == $this.attr('data-code')) {
 
 
                         li =
                             '<li class="el-cascader-menu__item el-cascader-menu__item--extensible" data-level=' +
                             (level * 1 + 1) + ' data-code=' +
-                            item.code +
+                            item[options.dataRelation.code]+
                             '>' + item.name;
                         //是否有子集
-                        var f = app.methods.judgeHasNextLi(level * 1 + 1, item.code, options);
+                        var f = app.methods.judgeHasNextLi(level * 1 + 1, item[options.dataRelation.code], options);
                         // if (f) {
                         //     $(li).append('<i class="fa fa-angle-right"></i>');
                         // }
@@ -187,7 +191,7 @@
                 var f = false;
                 $.each(options.data[level], function (index, item) {
 
-                    if (item.parentCode == code) {
+                    if (item[options.dataRelation.parentCode] == code) {
 
                         f = true;
                     }
@@ -236,12 +240,12 @@
 
                     var li =
                         '<li class="el-cascader-menu__item el-cascader-menu__item--extensible" data-level="1" data-code=' +
-                        item.code +
+                        item[options.dataRelation.code] +
                         '>' + item.name;
 
                     //判断是否有下一个层级
 
-                    var f = app.methods.judgeHasNextLi(1, item.code, options);
+                    var f = app.methods.judgeHasNextLi(1, item[options.dataRelation.code], options);
 
                     if (f) {
                         li = li + '<i class="fa fa-angle-right"></i>';
@@ -440,9 +444,9 @@
             //addElements.addAfterDom(this);
 
             //eventBinding(this, options);$
+            var _caseCaderApp=new caseCaderApp();
 
-
-            new caseCaderApp().init(this, options, new caseCaderApp());
+            _caseCaderApp.init(this, options, _caseCaderApp);
 
 
         });
